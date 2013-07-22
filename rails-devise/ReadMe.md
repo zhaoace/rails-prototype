@@ -11,6 +11,5 @@ ReadMe.md
 3. bundle install gem
     # bundle install
 
-
-4. use devise ger the framework in this application
+4. use devise generate the framework in this application
     # rails generate devise:install
