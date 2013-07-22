@@ -14,3 +14,7 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+
+/rails-jquerymobile
+/rails-mysql
+/rails-weibo-oa2
