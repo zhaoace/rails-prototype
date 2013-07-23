@@ -13,6 +13,21 @@ RailsDevise::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
+
+  # Email settings for devise .
+  config.action_mailer.default_url_options={:host=>'localhost:3000'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+     :address => "smtp.google.com",
+     :port => 25,
+     :domain => "google.com",
+     :authentication => :login,
+     :user_name => "zhaoace", 
+     :password => "PASSWORD_HERE" 
+   }
+
+
+
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
 

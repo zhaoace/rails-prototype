@@ -7,6 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+ <%= link_to '登出', destroy_user_session_path, :method => :delete, :data => {:confirm => "确认登出？"} %>
+ <hr>
+<p class="notice"><%= notice %></p>
+
+<p class="alert"><%= alert %></p>
 
 <%= yield %>
 
