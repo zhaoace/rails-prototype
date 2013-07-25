@@ -1,0 +1,27 @@
+<h1>Listing user_game_relationships</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Game</th>
+    <th>Relationship</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_game_relationships.each do |user_game_relationship| %>
+  <tr>
+    <td><%= user_game_relationship.user_id %></td>
+    <td><%= user_game_relationship.game_id %></td>
+    <td><%= user_game_relationship.relationship %></td>
+    <td><%= link_to 'Show', user_game_relationship %></td>
+    <td><%= link_to 'Edit', edit_user_game_relationship_path(user_game_relationship) %></td>
+    <td><%= link_to 'Destroy', user_game_relationship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User game relationship', new_user_game_relationship_path %>

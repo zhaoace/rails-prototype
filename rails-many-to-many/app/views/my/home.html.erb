@@ -1,0 +1,74 @@
+
+
+<h1>Welcome back home</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Platform</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% Game.all.each do |game| %>
+  <tr>
+    <td><%= game.name %></td>
+    <td><%= game.platform %></td>
+    <td><%= link_to 'Show', game %></td>
+    <td><%= link_to 'Edit', edit_game_path(game) %></td>
+    <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<hr>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% User.all.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.age %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<hr>
+<table>
+  <tr>
+    <th>User</th>
+    <th>Game</th>
+    <th>Relationship</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+   
+<% UserGameRelationship.all.each do |user_game_relationship| %>
+  <tr>
+    <td><%= user_game_relationship.user_id %></td>
+    <td><%= user_game_relationship.game_id %></td>
+    <td><%= user_game_relationship.relationship %></td>
+    <td><%= link_to 'Show', user_game_relationship %></td>
+    <td><%= link_to 'Edit', edit_user_game_relationship_path(user_game_relationship) %></td>
+    <td><%= link_to 'Destroy', user_game_relationship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<hr>
+debug(User.first.games.where("user_game_relationships.relationship = ?","like")) = <%= debug(User.first.games.where("user_game_relationships.relationship = ?","like")) %>
+ 
+  <hr>
+debug(User.first.games) = <%= debug(User.first.games) %> <br>
+
+
+<hr>
