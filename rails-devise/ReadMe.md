@@ -29,7 +29,7 @@
    ### Redirect home to user index
     * Remove public/index.html
     * Edit routes.rb :
-    `    root :to => "user#index" `
+    `    root :to => "users#index" `
 
 ## *CHECKPOINT*
 Start rails s and goto localhost:3000
