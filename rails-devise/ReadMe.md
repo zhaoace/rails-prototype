@@ -1,35 +1,33 @@
 # ReadMe.md
 
 ## Create new application
-·
-    rails new rails-devise --skip-bundle
-·
+`rails new rails-devise --skip-bundle`
 
 ## Edit Gemfile
     change the source to taobao
-    ·
-        source 'http://ruby.taobao.org'
-    ·
+    `
+    source 'http://ruby.taobao.org'
+    `
     add devise
-    ·
+    `
         gem 'devise' 
-    ·
+    `
 
 ## Bundle install gem
-·
+`
      bundle install
-·
+`
 
 
 ## Create scaffold to check.
-  ### Add model USER via scaffold , and init db.
+### Add model USER via scaffold , and init db.
     ` rails g scaffold user name:string age:integer `
     ` rake db:migrate `
 
-   ### Redirect home to user index
-    * Remove public/index.html
-    * Edit routes.rb :
-    `    root :to => "users#index" `
+### Redirect home to user index
+1. Remove public/index.html
+2. Edit routes.rb :
+`root :to => "users#index" `
 
 ## *CHECKPOINT*
 Start rails s and goto localhost:3000
