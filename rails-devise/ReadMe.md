@@ -4,65 +4,57 @@
 `rails new rails-devise --skip-bundle`
 
 ## Edit Gemfile
-    change the source to taobao
-    `
-    source 'http://ruby.taobao.org'
-    `
-    add devise
-    `
-        gem 'devise' 
-    `
+### change the source to taobao
+`source 'http://ruby.taobao.org'`
+### add devise
+`gem 'devise'`
 
 ## Bundle install gem
-`
-     bundle install
-`
+`bundle install`
 
 
 ## Create scaffold to check.
 ### Add model USER via scaffold , and init db.
-    ` rails g scaffold user name:string age:integer `
-    ` rake db:migrate `
+`rails g scaffold user name:string age:integer`
+
+`rake db:migrate`
 
 ### Redirect home to user index
 1. Remove public/index.html
-2. Edit routes.rb :
+2. Edit routes.rb : 
 `root :to => "users#index" `
 
 ## *CHECKPOINT*
-Start rails s and goto localhost:3000
+*Start rails s and goto localhost:3000*
 
 
 
 ## Use devise generate the framework in this application
-    ` rails generate devise:install`
+`rails generate devise:install`
 
 ## Generate views
-    ` rails g devise:views`
+`rails g devise:views`
 
 ## Integrate devise with User , update db as user talbe changed
-    ` 
-    rails g devise User
-    rake db:migrate 
-    `
+`rails g devise User`
+
+`rake db:migrate`
 
 ## Add devise relate attributes to model user
-    `
-    attr_accessible :email, :password, :password_confirmation, :remember_me 
-    `
+`attr_accessible :email, :password, :password_confirmation, :remember_me`
 
 
 ## Add before filter to contoller
-    @users_controller.rb
-    `
-    before_filter :authenticate_user!
-    `
+@users_controller.rb
+`before_filter :authenticate_user!`
 
 ## Add html elements 
-    @app/views/layouts/application.html.erb
+@app/views/layouts/application.html.erb
 
-*CHECKPOINT*
-Start rails s and goto localhost:3000
+
+## *CHECKPOINT*
+*Start rails s and goto localhost:3000*
+
 
 
 [ Next action ]
