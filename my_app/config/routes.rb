@@ -1,4 +1,17 @@
 MyApp::Application.routes.draw do
+  
+  root 'hello#index'
+
+  resources :cocs
+
+
+  resources :people
+  get 'hello' => 'hello#index'
+  post '/' =>'hello#index'
+  get 'hello/result' => 'hello#result'
+  post 'hello/result' => 'hello#result'
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

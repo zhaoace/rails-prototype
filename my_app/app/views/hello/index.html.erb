@@ -1,0 +1,44 @@
+<h1> hello world </h1>
+
+
+
+<%- @var_index.each do |var| %>
+  <hr/> 
+  <%= var %>
+
+<% end %>
+
+
+
+<%- @var_index << "insert from hello world" %>
+
+<%= link_to 'result', controller: "hello", action: 'result' , var: @var_index %>
+
+<hr>
+
+
+<%= form_tag do -%>
+
+  <div><%= label_tag 'test label here'%></div>
+  <div><%= text_field_tag 'name' %></div>
+  <div><%= submit_tag 'go to self' %></div>
+
+    
+<% end -%>
+
+<br>
+<br>
+<br>
+<hr>
+
+
+<%= form_tag('hello/result') do -%>
+
+  <div><%= label_tag 'test label here'%></div>
+  <div><%= text_field_tag 'name' %></div>
+  <div><%= submit_tag 'go to result' %></div>
+
+    
+<% end -%>
+
+

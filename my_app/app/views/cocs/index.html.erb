@@ -1,0 +1,20 @@
+
+
+
+
+
+<%= form_tag do -%>
+
+  <div><%= label_tag '胖子'%><%= text_field_tag :pangzi %></div>
+  <div><%= label_tag '天使'%><%= text_field_tag :tianshi %></div>
+  <div><%= label_tag '弓箭手'%><%= text_field_tag :gongjianshou %></div>
+  <div><%= label_tag '狂暴魔法'%><%= text_field_tag :kuangbao %></div>
+  <div><%= label_tag '治疗魔法'%><%= text_field_tag :zhiliao %></div>
+  <div><%= label_tag '闪电魔法'%><%= text_field_tag :shandian %></div>
+  <div><%= submit_tag '计算' %></div>
+    
+<% end -%>
+
+
+<%= label_tag @mana %>
+
