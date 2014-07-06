@@ -1,0 +1,10 @@
+<h1>StaticPublic#index</h1>
+<p>Find me in app/views/static_public/index.html.erb</p>
+
+
+<%= form_tag('static_public/send_mail') do -%>
+  <div><%= text_area_tag  :email_to, @email_to %></div>
+
+  <div><%= submit_tag 'Save' %></div>
+<% end -%>
+
