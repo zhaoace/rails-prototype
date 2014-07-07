@@ -11,7 +11,7 @@ class StaticPublicController < ApplicationController
 
     @email_to = params[:email_to] if params[:email_to]
     p @email_to
-    # UserMailer.confirm(@email_to).deliver
+    UserMailer.confirm(@email_to).deliver
     redirect_to :action => :index
 
 
