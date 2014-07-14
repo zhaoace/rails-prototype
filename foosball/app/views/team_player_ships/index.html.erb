@@ -1,0 +1,29 @@
+<h1>Listing team_player_ships</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Team</th>
+      <th>Player</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @team_player_ships.each do |team_player_ship| %>
+      <tr>
+        <td><%= team_player_ship.team_id %></td>
+        <td><%= team_player_ship.player_id %></td>
+        <td><%= link_to 'Show', team_player_ship %></td>
+        <td><%= link_to 'Edit', edit_team_player_ship_path(team_player_ship) %></td>
+        <td><%= link_to 'Destroy', team_player_ship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Team player ship', new_team_player_ship_path %>

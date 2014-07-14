@@ -1,0 +1,57 @@
+<%= form_for(@team) do |f| %>
+<% if @team.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
+
+  <ul>
+    <% @team.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+
+
+<div class="field">
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+</div>
+
+<table>
+    <thead>
+    <tr>
+      <th>  </th>
+      <th><%= f.label :name %></th>
+      <th><%= f.label :sapid %></th>
+      <th><%= f.label :email %></th>
+      <th><%= f.label :position %></th>
+      <th><%= f.label :judge %></th>
+    </tr>
+    </thead>
+
+<tbody>
+  <% @team.players.each do |player , index| %>
+    <%=  f.fields_for player,  index: player.id do | player_form| %>
+    <tr>
+      <th>Player <%= index %></th>
+      <td><%= player_form.text_field :name %></td>
+      <td><%= player_form.text_field :sapid %></td>
+      <td><%= player_form.email_field :email %></td>
+      <td><%= player_form.text_field :position %></td>
+      <td><%= player_form.check_box  :judge %></td>
+    </tr>
+    <% end %>
+  <% end %>
+
+
+</tbody>
+</table>
+
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+
+<% end %>

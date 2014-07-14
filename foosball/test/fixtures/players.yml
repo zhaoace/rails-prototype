@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  sapid: MyString
+  email: MyString
+  position: MyString
+  judge: false
+
+two:
+  name: MyString
+  sapid: MyString
+  email: MyString
+  position: MyString
+  judge: false
